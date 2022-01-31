@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Search from "./components/Search";
+import Weather from "./components/Weather";
 
 function App() {
+  const [searchshow, setSearchShow] = useState(true);
+  const [city, setCity] = useState("");
+  const [logoURL, setLogoURL] = useState(
+    "https://basmilius.github.io/weather-icons/production/fill/all/thunderstorms-day-snow.svg"
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DndProvider backend={HTML5Backend}>
+        <Navbar logourl={logoURL} setSrc={setSearchShow} />
+        <main>
+          {searchshow ? (
+            <Search city={city} setCity={setCity} setSrc={setSearchShow} />
+          ) : (
+            <Weather city={city} setCity={setCity} />
+          )}
+        </main>
+        <Footer />
+      </DndProvider>
+    </>
   );
 }
 
