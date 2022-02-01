@@ -29,11 +29,7 @@ This project has no running website (as for now), example screenshots of its loo
 const corsProxy = "";
 ```
 
-with proper value, screens:
-<br />
-![Start](https://raw.githubusercontent.com/ptakpiotr/reactweatherapp/master/mobile_view_start.bmp?token=GHSAT0AAAAAABRD333OC5C7Z5PTB5J47ZCYYPYKE5A)
-<br />
-![Weather](https://raw.githubusercontent.com/ptakpiotr/reactweatherapp/master/mobile_view_weather.bmp?token=GHSAT0AAAAAABRD333O4W2KQECDEGW2EG3GYPYKE3Q)
+with proper value, see bmp images in my repo.
 
 ## Thanks
 
